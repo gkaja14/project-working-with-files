@@ -44,7 +44,7 @@ for questionNum in range(50):
     answerOptions = wrongAnswers + [correctAnswer]
     random.shuffle(answeOptions)
 
-quizFile.write('%. what is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
+quizFile.write('%s. what is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
 
 for i in range(4):
     quizFile.write(' %s. %s\n' % ('ABCD' [i], answerOptions[i]))
