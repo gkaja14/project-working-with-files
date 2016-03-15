@@ -4,6 +4,9 @@
 
 import random, os
 
+os.makedirs("./answers", exit_ok = True) # create answer folder
+os.makedirs("./quizzes", exit-ok = Ture) # create anser folder
+
 # The quiz data. Keys are states and values are their capitals.
 capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
             'Arkansas': 'Little Rock', 'California': 'Sacramento', 'Colorado': 'Denver',
