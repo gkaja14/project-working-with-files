@@ -4,8 +4,8 @@
 
 import random, os
 
-os.makedirs("./answers", exit_ok = True) # create answer folder
-os.makedirs("./quizzes", exit-ok = Ture) # create anser folder
+os.makedirs("./answers", exist_ok = True) # create answer folder
+os.makedirs("./quizzes", exist_ok = True) # create anser folder
 
 # The quiz data. Keys are states and values are their capitals.
 capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
@@ -36,24 +36,24 @@ for quizNum in range (5):
     states = list(capitals.keys())
     random.shhffle(states)
 
-for questionNum in range(50):
-    correctAnswer = capitals[states[questionNum]]
-    wrongAnswers = list(capitals.values())
-    del wrongAnswers[wrongAnswers.index(correctAnswer)]
-    wrongAnswers = random.sapmle(wongAnswers, 3)
-    answerOptions = wrongAnswers + [correctAnswer]
-    random.shuffle(answeOptions)
+    for questionNum in range(50):
+        correctAnswer = capitals[states[questionNum]]
+        wrongAnswers = list(capitals.values())
+        del wrongAnswers[wrongAnswers.index(correctAnswer)]
+        wrongAnswers = random.sapmle(wongAnswers, 3)
+        answerOptions = wrongAnswers + [correctAnswer]
+        random.shuffle(answeOptions)
 
-quizFile.write('%s. what is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
+    quitzFile.write('%s. what is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
 
-for i in range(4):
-    quizFile.write(' %s. %s\n' % ('ABCD' [i], answerOptions[i]))
-quizFile.write('\n')
+    for i in range(4):
+        quizFile.write(' %s. %s\n' % ('ABCD' [i], answerOptions[i]))
+        quizFile.write('\n')
 
-answeKeyFile.write('%s. %s\n' %(questionNum + 1, 'ABCD'[answerOptions.index(correctAnswer)]))
+    answeKeyFile.write('%s. %s\n' %(questionNum + 1, 'ABCD'[answerOptions.index(correctAnswer)]))
 
-quizFile.close()
-answerKeyFile.close()
+    quizFile.close()
+    answerKeyFile.close()
 
     
             
